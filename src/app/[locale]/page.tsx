@@ -6,18 +6,14 @@ export default function DashboardPage() {
   return (
     <div>
       <section className='flex flex-col items-center justify-center py-24'>
-        <h1 className='text-center text-7xl font-extrabold leading-tight'>
-          {t('An')}{' '}
+        <h1 className='text-center font-extrabold leading-tight'>
           <span className='bg-span-bg bg-clip-text text-transparent'>
-            {t('Booster')}
+            {t('Synbio ID')}
           </span>
-          <br />
-          {t('to_Your_NextJS_Apps')}
         </h1>
         <div className='my-6 px-20 text-center text-2xl text-text-secondary'>
-          {t(
-            'An_approachable_performant_and_versatile_boilerplate_for_building_SSR_applications'
-          )}
+          A Non-profit Organization that Focus on Enhancing Synthetic Biology and Bioinformatics Enthusiasts in Indonesia.
+          We are Ready to Make Any Collaborations with Your Institution.
         </div>
         <div className='mt-4 flex flex-row gap-4'>
           <a
