@@ -25,7 +25,7 @@ export default function BIOS() {
         <div className='flex-col pr-20'>
           <h3 className='green'>
             Ideate, Learn, Create & Compete with us
-            <img src='/images/idnl-graphic-elements-01.png' className=' inline size-2/12 p-2' />
+            <img src='/images/idnl-graphic-elements-01.png' className='inline size-2/12 p-2' />
           </h3>
           <p>
             iGEM Indonesian League is a synthetic biology competition for high school and undergraduate students, comlemented by a series of educational workshops to introduce you to global #synbio ecosystem

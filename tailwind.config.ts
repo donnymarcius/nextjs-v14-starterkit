@@ -35,11 +35,13 @@ const config = {
         selected: 'var(--selected)',
         dropdown: 'var(--dropdown)',
         dropdownHover: 'var(--dropdown-hover)',
-        buttonSecondary: 'var(--button-secondary)'
+        buttonSecondary: 'var(--button-secondary)',
+        'green': '#20544a'
       },
 
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', 'var(--rubik)']
+        sans: ['var(--font-space-grotesk)', 'var(--rubik)'],
+        gordita: ['Gordita']
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
