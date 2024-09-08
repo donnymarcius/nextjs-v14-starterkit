@@ -50,13 +50,7 @@ export default function RootLayout({
           defaultTheme='light'
           themes={[
             'light',
-            'dark',
-            'instagram',
-            'facebook',
-            'discord',
-            'netflix',
-            'twilight',
-            'reddit'
+            'dark'
           ]}
         >
           <NextIntlClientProvider

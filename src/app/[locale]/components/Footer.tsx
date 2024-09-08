@@ -28,23 +28,35 @@ export const Footer: FC<Props> = ({ locale }) => {
           </a>
         </div>
 
-        <div className='flex gap-10 mt-12 items-center justify-center font-medium'>
+        <div className='flex gap-8 mt-12 items-center justify-center font-medium h-4'>
           <Link lang={locale} href={'/home'}>
             {t('Home')}
           </Link>
+          <div className="vertical-line"></div>
+
           <Link lang={locale} href={'/bios'}>
             {t('Competition')}
           </Link>
+          <div className="vertical-line"></div>
+
           <Link lang={locale} href={'/mentoring'}>
             {t('Mentoring')}
           </Link>
+          <div className="vertical-line"></div>
+
           <Link lang={locale} href={'/journalclub'}>
             {t('Journal Club')}
           </Link>
+          <div className="vertical-line"></div>
+
           <a href='https://medium.com/biologi-sintetis-indonesia' target="_blank" rel="noopener noreferrer">{t('Medium')}</a>
+          <div className="vertical-line"></div>
+
           <Link lang={locale} href={'/about'}>
             {t('About')}
           </Link>
+          <div className="vertical-line"></div>
+
           <Link lang={locale} href={'/contact'}>
             {t('Contact')}
           </Link>
