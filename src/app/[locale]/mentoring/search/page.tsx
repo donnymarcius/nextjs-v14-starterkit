@@ -28,14 +28,22 @@ const mentoring: FC<Props> = ({ locale }) => {
             <p className='text-base text-green'>Search Mentor</p>
           </div>
 
-          <div className='flex gap-4 align-center mb-8 justify-center'>
-            <Link lang={locale} href="/mentoring/dashboard/mentee">
-              <p className='filter-button font-medium text-sm text-green'>Login as Mentee</p>
-            </Link>
-            
-            <Link lang={locale} href="/mentoring/dashboard/mentor">
-              <p className='filter-button font-medium text-sm text-green'>Login as Mentor</p>
-            </Link>
+          <div className='flex justify-end items-center'>
+            <div className='flex gap-4 align-center mb-8 justify-center'>
+              <Link lang={locale} href={'/mentoring/mentor-register'}>
+                <div className='filter-button font-medium text-sm text-green'>
+                  Register
+                </div>
+              </Link>
+
+              <Link lang={locale} href="/mentoring/dashboard/mentee">
+                <p className='filter-button font-medium text-sm text-green'>Login as Mentee</p>
+              </Link>
+              
+              <Link lang={locale} href="/mentoring/dashboard/mentor">
+                <p className='filter-button font-medium text-sm text-green'>Login as Mentor</p>
+              </Link>
+            </div>
           </div>
         </div>
 

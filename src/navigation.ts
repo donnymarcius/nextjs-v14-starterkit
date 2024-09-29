@@ -17,8 +17,10 @@ export const pathnames = {
   '/contact': '/contact',
   '/mentoring/archive': '/mentoring/archive',
   '/mentoring/search': '/mentoring/search',
+  '/mentoring/mentor-register': '/mentoring/mentor-register',
   '/mentoring/dashboard/mentee': '/mentoring/dashboard/mentee',
   '/mentoring/dashboard/mentor': '/mentoring/dashboard/mentor',
+  '/mentoring/dashboard/schedule': '/mentoring/dashboard/schedule',
   '/mentoring/mentor/mentor_A': '/mentoring/mentor/mentor_A'
 } satisfies Pathnames<typeof locales>
 

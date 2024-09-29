@@ -1,6 +1,6 @@
 'use client'
-import { useTranslations } from 'next-intl';
 import { Link } from '@/src/navigation'
+import { useTranslations } from 'next-intl'
 import { FC } from 'react'
 interface Props {
   locale: string
@@ -9,14 +9,11 @@ interface Props {
 import { useEffect, useState } from 'react';
 import * as XLSX from 'xlsx';
 interface RowData  {
-  category: string;
   name: string;
-  role: string;
-  affiliation: string;
-  linkedin: string;
+  testi: string;
 }
 
-const archive: FC<Props> = ({ locale }) => {
+const mentoring: FC<Props> = ({ locale }) => {
   const t = useTranslations('')
 
   const [rows, setRows] = useState<RowData[]>([]);
@@ -25,7 +22,7 @@ const archive: FC<Props> = ({ locale }) => {
     const fetchExcelFile = async () => {
       try {
         // Fetch the file from the public folder
-        const response = await fetch('/data/past-mentors.xlsx');
+        const response = await fetch('/data/testi.xlsx');
         const arrayBuffer = await response.arrayBuffer();
         
         // Parse the Excel file
@@ -38,11 +35,8 @@ const archive: FC<Props> = ({ locale }) => {
 
         // Loop through the rows and extract the data
         const rowsData = jsonData.map((row: any) => ({
-          category: row[0],
-          name: row[1],
-          role: row[2],
-          affiliation: row[3],
-          linkedin: row[4]
+          name: row[0],
+          testi: row[1],
         }));
 
         setRows(rowsData);
@@ -53,37 +47,19 @@ const archive: FC<Props> = ({ locale }) => {
 
     fetchExcelFile();
   }, []);
-  
-  const filteredRowsAcademia = rows.filter(row => row.category === 'Academia');
 
   return (
     <div>
       <div className='header-wrapper'>
         <div className='header-content'>
-          <h1 className='p-0 text-white'>Mentors Profile from Previous Batch</h1>
-          <p className='italic p-0 text-white'>xxx</p>
+          <h1 className='p-0 text-white'>Mentoring Program</h1>
+          <p className='italic p-0 text-white'>Gathering mentors and mentees across Indonesia to explore life science</p>
         </div>
       </div>
 
-      <div className='flex justify-between items-center p-10'>
-        <div className='flex gap-2 mb-8'>
-          <p className='text-base text-green'>
-            <Link lang={locale} href="/mentoring">
-              Home
-            </Link>
-          </p>
-          <p className='text-base text-green'>{`>`}</p>
-          <p className='text-base text-green'>Archive</p>
-        </div>
-
+      <div className='p-10'>
         <div className='flex justify-end items-center'>
           <div className='flex gap-4 align-center mb-8 justify-center'>
-            <Link lang={locale} href={'/mentoring/mentor-register'}>
-              <div className='filter-button font-medium text-sm text-green'>
-                Register
-              </div>
-            </Link>
-
             <Link lang={locale} href="/mentoring/dashboard/mentee">
               <p className='filter-button font-medium text-sm text-green'>Login as Mentee</p>
             </Link>
@@ -93,36 +69,26 @@ const archive: FC<Props> = ({ locale }) => {
             </Link>
           </div>
         </div>
-      </div>
 
-      <fieldset>
-        <legend>Academia</legend>
-        <div className='mentor-group'>
+        <p className='font-bold text-center text-green py-20 text-6xl'>Click <u className='hover:cursor-pointer hover:text-secondary'>here</u> to register as mentor.</p>
+
+        <h2 className='text-center mt-12 mb-4'>Testimony from Other Mentors</h2>
+
+        <div className='flex flex-wrap gap-4'>
           {rows.map((row, index) => (
-            <div 
+            <div
               key={index}
-              className='each-group'
+              className='flex-1 min-w-[200px] testi-card'
             >
-              <img src='/images/mentors/Ihsan_Fauzan.png' alt='Ihsan_Fauzan' className='fig' />
-              <p className='name'>{row.name}</p>
-              <p className='role'>{row.role}</p>
-              <p className='aflt'>{row.affiliation}</p>
+              <p className='text-sm text-justify p-0'>{row.testi}</p>
+              <div className='flex justify-end items-center mt-4'>
+                <p className='font-medium text-green'>{row.name}</p>
+                <img src='/images/icon/person_white.png' className='w-8 bg-green p-2 rounded-full ml-2' alt='person' />
+              </div>
             </div>
           ))}
-            <div className='each-group'>
-                {/* <a href="mentors_Ihsan_Fauzan.html"> */}
-                    <img src='/images/mentors/Ihsan_Fauzan.png' alt='Ihsan_Fauzan' className='fig' />
-                    <p className='name'>Ihsan Fauzan</p>
-                    <p className='role'>Scientific and Operational Lead</p>
-                    <p className='aflt'>PT. Enzim Kreasi Bangsa</p>
-                {/* </a> */}
-
-                <a href='https://www.linkedin.com/in/ihsan-fauzan/' target='_blank' rel='noopener noreferrer'><img src='/images/logo/linkedin.png' alt='LinkedIn' className='w-4 m-auto' /></a>
-            </div>
         </div>
-      </fieldset>
-
-      <div className='my-20'></div>
+      </div>
 
       <div className="relative h-screen">
         <div className="fixed bottom-4 -left-8">
@@ -137,4 +103,4 @@ const archive: FC<Props> = ({ locale }) => {
   )
 }
 
-export default archive
+export default mentoring

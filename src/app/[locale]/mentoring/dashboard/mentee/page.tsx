@@ -16,19 +16,35 @@ const mentoring: FC<Props> = ({ locale }) => {
         </div>
       </div>
 
+      <div className='flex justify-between items-center pt-10 px-10'>
+        <div className='flex gap-2'>
+          <Link lang={locale} href="/mentoring">
+            <p className='text-base text-green'>
+              Home
+            </p>
+          </Link>
+          <p className='text-base text-green'>{`>`}</p>
+          <p className='text-base text-green'>Dashboard</p>
+        </div>
+      </div>
+
       <div className='flex items-start gap-20 p-10'>
         <div className='flex-row w-1/4'>
-          <div className='flex items-center my-2'>
-            <img src='/images/icon/profile.png' className='w-8' alt='profile' />
-            <p className='text-base text-shadow font-medium text-green ml-2'>Profile</p>
-          </div>
+          {/* <Link lang={locale} href="/mentoring/dashboard/mentee"> */}
+            <div className='flex items-center my-2'>
+              <img src='/images/icon/profile.png' className='w-8' alt='profile' />
+              <p className='text-base text-shadow font-medium text-green ml-2'>Profile</p>
+            </div>
+          {/* </Link> */}
 
           <hr className='w-full border-green'></hr>
 
-          <div className='flex items-center my-2'>
-            <img src='/images/icon/calendar.png' className='w-8' alt='calendar' />
-            <p className='text-base text-shadow font-medium text-green ml-2'>Mentoring Schedule</p>
-          </div>
+          <Link lang={locale} href="/mentoring/dashboard/schedule">
+            <div className='flex items-center my-2'>
+              <img src='/images/icon/calendar.png' className='w-8' alt='calendar' />
+              <p className='text-base text-shadow font-medium text-green ml-2'>Scheduled Session</p>
+            </div>
+          </Link>
 
           <hr className='w-full border-green'></hr>
 
